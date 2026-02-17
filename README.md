@@ -15,7 +15,7 @@ A GPT-style **decoder-only Transformer** trained at the **character level** on t
 - `shakespear.py` — end-to-end training + validation + checkpointing + loss plot + sample generation
 - `generate.py` — loads `ckpt.pt` and generates text
 - `input.txt` — Shakespeare dataset (plain text)
-- `Losses.png` — training vs validation loss plot (generated / included)
+- `Losses.png` — training vs validation loss plot
 
 ## Quickstart
 
