@@ -18,6 +18,7 @@ A GPT-style **decoder-only Transformer** trained at the **character level** on t
 - `Losses.png` — training vs validation loss plot
 
 ## Quickstart
+Run training first to create `ckpt.pt`, then run `generate.py`
 
 ### Install
 ```bash
@@ -26,12 +27,12 @@ pip install torch matplotlib
 
 ### Train
 ```bash
-python shakespeare.py
+python shakespear.py
 ```
 This will:
-- build the character vocabulary from 'input.txt'
-- train for 'train_steps"
-- save a checkpoint to 'ckpt.pt'
+- build the character vocabulary from `input.txt`
+- train for `train_steps`
+- save a checkpoint to `ckpt.pt`
 - plot training/validation losses
 - generate a sample continuation from the default prompt
 
@@ -59,16 +60,18 @@ Implemented in PyTorch with:
 
 ## Default hyperparameters
 
-Defined at the top of the scripts:
 - `block_size = 128` (context length)
 - `batch_size = 128`
 - `nb_layers = 12`
 - `nb_heads = 8`
 - `nb_embd = 768`
 - `lr = 5e-4`
+- LR schedule: `StepLR(step_size=1000, gamma=0.7)`
 - `train_steps = 6000`
 - `residual_pdrop = 0.1`
 - `embd_pdrop = 0.2`
+- Gradient clipping: clip when gradient L2 norm > 1.0
+
 
 ## Results (from experiments)
 
